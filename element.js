@@ -1,3 +1,17 @@
+const template = document.createElement('div');
+template.innerHTML = `
+    <style>
+        .texto {
+            color: red;
+        }
+        p {
+            color: blue;
+        }
+    </style>
+    <p class="texto">Hola mundo 2</p>
+    <p>texto ejemplo para clase!</p>
+`
+
 class myElement extends HTMLElement {
     constructor(){
         super();
@@ -7,6 +21,7 @@ class myElement extends HTMLElement {
     connectedCallback(){
         this.p.textContent = "Hola Mundo";
         this.appendChild(this.p);
+        this.appendChild(template);
     }
 }
 
