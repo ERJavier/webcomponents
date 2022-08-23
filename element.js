@@ -1,7 +1,12 @@
 class myElement extends HTMLElement {
     constructor(){
         super();
-        console.log("Hola mundo")
+
+        this.p = document.createElement('p');
+    }
+    connectedCallback(){
+        this.p.textContent = "Hola Mundo";
+        this.appendChild(this.p);
     }
 }
 
