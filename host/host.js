@@ -28,6 +28,9 @@ class myElement extends HTMLElement {
                     font-size: 20px;
                     background: gray;
             }
+            :host(.blue){
+                background: blue;
+            }
             </style>
         `;
 
