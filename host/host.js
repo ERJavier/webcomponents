@@ -26,10 +26,24 @@ class myElement extends HTMLElement {
                     min-width: 300px;
                     max-width: 450px;
                     font-size: 20px;
-                    background: gray;
+                    background: white;
             }
             :host(.blue){
                 background: blue;
+            }
+
+            :host([yellow]){
+                background: yellow;
+            }
+            :host([yellow]) h2, :host([yellow]) p {
+                color: grey;
+            }
+            :host([yellow]) p{
+                color: red;
+            }
+            :host-context(article.card){
+                display: block;
+                max-width: 100%;
             }
             </style>
         `;
