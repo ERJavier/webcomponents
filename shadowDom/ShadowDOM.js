@@ -1,12 +1,13 @@
 class myElement extends HTMLElement {
     constructor(){
         super();
+        this.attachShadow({mode: "open"});
     }
     getTemplate(){
         const template = document.createElement('template');
         template.innerHTML = `
             <section>
-                <h2>Hola Mundito</h2>
+                <h2 class="title">Hola Mundito</h2>
                 <div>
                     <p>Soy mas texto</p>
                 </div>
@@ -27,7 +28,7 @@ class myElement extends HTMLElement {
 
     }
     render() {
-        this.appendChild(this.getTemplate().content.cloneNode(true))
+        this.shadowRoot.appendChild(this.getTemplate().content.cloneNode(true))
     }
     connectedCallback(){
         this.render();
