@@ -3,19 +3,19 @@ class myElement extends HTMLElement {
         super();
         this.attachShadow({mode: "open"});
     }
-    static get observerAttributes(){
-        return ['title', 'paragraph', 'img'];
+    static get observedAttributes() {
+        return ["title", "paragraph", "img"];
     }
 
-    attrubuteChangedCallback(attr, oldVal, newVal){
+    attributeChangedCallback(attr, oldVal, newVal){
         if (attr === "title") {
             this.title = newVal;
         }
         if (attr === "paragraph") {
-            this.title = newVal;
+            this.paragraph = newVal;
         }
         if (attr === "img") {
-            this.title = newVal;
+            this.img = newVal;
         }        
     }
     getTemplate(){
